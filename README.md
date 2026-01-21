@@ -40,6 +40,8 @@
 
 Feel free to open an issue or submit a fix/contribution via pull request. :)
 
+---
+
 ## Get Started – Deploy on GitHub Pages
 ### About Github Pages
 > GitHub Pages is a free hosting service provided by GitHub, designed for creating and publishing websites directly from a GitHub repository. It allows developers, designers, and anyone with a GitHub account to host personal, project, or organizational websites without needing external hosting services. GitHub Pages works seamlessly with GitHub repositories, automatically generating a static website whenever new content is pushed.
@@ -266,7 +268,21 @@ If you don’t need scheduled redeployment, simply delete the schedule block.
 
 You can set a custom GitHub Pages domain, such as my own: [https://link.zhgchg.li](https://link.zhgchg.li).
 
-Follow [my tutorial for domain binding.](https://zhgchg.li/posts/zrealm-dev/en/github-pages-custom-domain-setup-replace-github-io-with-your-own-domain-483af5d93297/) If you’d like, you can [purchase a domain through my Namecheap referral](https://namecheap.pxf.io/P0jdZQ) link—I’ll earn a small commission, which will help me continue contributing to open-source projects.
+Follow [my tutorial for domain binding.](https://en.zhgchg.li/posts/zrealm-dev/github-pages-custom-domain-setup-replace-github-io-with-your-own-domain-483af5d93297) If you’d like, you can [purchase a domain through my Namecheap referral](https://namecheap.pxf.io/P0jdZQ) link—I’ll earn a small commission, which will help me continue contributing to open-source projects.
+
+---
+
+## Showcase ✨
+
+Real websites built with **linkyee** — fast, clean, and open-source.
+
+> Built your own site with linkyee?  
+> ⭐ Add it here by opening a PR and inspire others!
+
+| Preview | Website | Description |
+|--------|--------|-------------|
+| <img width="180" height="180" alt="ZhgChgLi" src="https://github.com/user-attachments/assets/9052e290-f6b8-4a94-a71e-85ec36cd2900" /> | [link.zhgchg.li](https://link.zhgchg.li) | Official demo · My personal link page |
+| - |Your Site | Your site could be featured here 🚀 |
 
 ---
 
