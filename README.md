@@ -36,7 +36,7 @@
 
 - **100% free.** Hosted on GitHub Pages. No subscriptions, no ads, no upsells.
 - **100% yours.** Your config, themes, plugins, and content live in your own GitHub repo. Take it offline whenever you want.
-- **7 ready-made themes** — switch by editing a single line in `config.yml`.
+- **8 ready-made themes** — switch by editing a single line in `config.yml`.
 - **AI Style Designer.** Describe the look you want in plain English; the bundled [`linkyee-style-designer`](./.claude/skills/linkyee-style-designer/SKILL.md) Claude skill writes the full theme for you (HTML + CSS + JS).
 - **6 built-in plugins** for live data — GitHub stars, last commit, profile stats, RSS/Atom feeds, date countdowns, latest YouTube video.
 - **AI Plugin Builder.** Want data from somewhere else? Describe the source; the bundled [`linkyee-plugin-builder`](./.claude/skills/linkyee-plugin-builder/SKILL.md) skill writes the Ruby plugin and wires it in.
@@ -98,7 +98,7 @@ Delete the `schedule:` block if you don't want scheduled redeploys.
 
 ## Themes 🎨
 
-linkyee ships **7 built-in themes** designed to be drop-in usable. Switch by editing one line in `config.yml`:
+linkyee ships **8 built-in themes** designed to be drop-in usable. Switch by editing one line in `config.yml`:
 
 ```yaml
 theme: minimal-mono   # any directory under ./themes/
@@ -112,6 +112,7 @@ theme: minimal-mono   # any directory under ./themes/
 | `neo-brutalism` | <img width="200" alt="neo-brutalism light" src="./themes/neo-brutalism/preview-light.png"> | <img width="200" alt="neo-brutalism dark" src="./themes/neo-brutalism/preview-dark.png"> | Thick borders · primary colors · indie devs, artists |
 | `glassmorphism` | <img width="200" alt="glassmorphism light" src="./themes/glassmorphism/preview-light.png"> | <img width="200" alt="glassmorphism dark" src="./themes/glassmorphism/preview-dark.png"> | Frosted glass cards · designers, agencies |
 | `paper-card` | <img width="200" alt="paper-card light" src="./themes/paper-card/preview-light.png"> | <img width="200" alt="paper-card dark" src="./themes/paper-card/preview-dark.png"> | Pastel cards · rounded · creators, illustrators |
+| `newsprint` | <img width="200" alt="newsprint light" src="./themes/newsprint/preview-light.png"> | <img width="200" alt="newsprint dark" src="./themes/newsprint/preview-dark.png"> | Newspaper masthead · serif + mono · numbered link rows · the live look of [link.zhgchg.li](https://link.zhgchg.li/) |
 | `terminal-retro` | — *(dark-first)* | <img width="200" alt="terminal-retro dark" src="./themes/terminal-retro/preview-dark.png"> | Green-on-black CRT · scanlines · hackers, infosec |
 
 Every built-in theme meets the same baseline: WCAG AA contrast, **dark mode that auto-switches with your system appearance** (no manual toggle), responsive down to 320 px, keyboard-accessible focus states, and `prefers-reduced-motion` support.

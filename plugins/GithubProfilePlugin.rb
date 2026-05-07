@@ -21,14 +21,12 @@ require 'nokogiri'
 # development blow through that budget in minutes and start returning
 # zeroes. The public profile HTML has no such limit.
 #
-# Result is disk-cached for 1 day to keep things fast and to be a good
-# citizen even with scraping. Cache lives at ./.linkyee-cache/.
+# Result is disk-cached so a network blip / rate-limit during a build
+# falls back to the last successful value (see Plugin#cache).
 class GithubProfilePlugin < Plugin
-  TTL = 86400
-
   def execute
     args.each_with_object({}) do |user, out|
-      out[user] = cache("gh-profile:v2:#{user}", ttl: TTL) { load_profile(user) } || empty
+      out[user] = cache("gh-profile:v2:#{user}") { load_profile(user) } || empty
     end
   end
 

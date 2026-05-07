@@ -122,45 +122,48 @@ class Plugin
     default
   end
 
-  # Cache a value with optional disk persistence across builds.
+  # Cache with stale-on-failure semantics — no TTL.
   #
-  #   cache("gh:#{repo}") { http_get_json(...) }            # in-memory only (per build)
-  #   cache("gh:#{repo}", ttl: 3600) { http_get_json(...) } # disk-backed, 1h TTL
+  #   cache("gh:#{repo}") { http_get_json(...) }
   #
-  # Disk-backed caching is important for plugins hitting rate-limited APIs
-  # (GitHub's unauth limit is 60/hour) — frequent rebuilds during local
-  # development would otherwise blow through the budget within minutes.
-  # Cache files live under ./.linkyee-cache/ (gitignored).
+  # On every build the block is run first to fetch fresh data. If it
+  # returns a non-nil value, the cache file under ./.linkyee-cache/ is
+  # overwritten and that value is returned. If the block returns nil
+  # (network failure, rate limit, parse error), the previously cached
+  # value on disk is returned instead — so the rendered page always
+  # has SOMETHING usable. Only when there is no cache AND the fetch
+  # fails do we return nil to the caller.
   #
-  # Nil results are NEVER cached — that lets a failing fetch (rate limit,
-  # network blip) be retried on the next build instead of pinning a bad
-  # value for the full TTL.
-  def cache(key, ttl: nil)
+  # In-memory results are also cached so multiple plugins sharing a
+  # key (e.g. several GitHub plugins hitting the same repo) only do
+  # one network call per build.
+  def cache(key)
     return Plugin.cache_store[key] if Plugin.cache_store.key?(key)
-
-    if ttl
-      path = Plugin.disk_cache_path(key)
-      if File.exist?(path) && (Time.now.to_i - File.mtime(path).to_i) < ttl
-        begin
-          value = JSON.parse(File.read(path))
-          Plugin.cache_store[key] = value
-          return value
-        rescue JSON::ParserError
-          # Treat corrupt cache as a miss; recompute below.
-        end
-      end
-    end
+    path = Plugin.disk_cache_path(key)
 
     value = yield
+
     if !value.nil?
+      # Fresh fetch succeeded — overwrite cache.
       Plugin.cache_store[key] = value
-      if ttl
-        path = Plugin.disk_cache_path(key)
-        FileUtils.mkdir_p(File.dirname(path))
-        File.write(path, JSON.generate(value))
+      FileUtils.mkdir_p(File.dirname(path))
+      File.write(path, JSON.generate(value))
+      return value
+    end
+
+    # Fetch failed — fall back to whatever's on disk (any age).
+    if File.exist?(path)
+      begin
+        cached = JSON.parse(File.read(path))
+        Plugin.cache_store[key] = cached
+        log("fetch failed for #{key}; using cached value")
+        return cached
+      rescue JSON::ParserError
+        # Corrupt cache file — fall through to nil.
       end
     end
-    value
+
+    nil
   end
 
   # Print a build-log line with the plugin's class name as prefix.

@@ -37,11 +37,10 @@ class YouTubeChannelLatestVideoPlugin < Plugin
     'title' => '', 'url' => '', 'video_id' => '',
     'thumbnail' => '', 'published' => '', 'channel' => ''
   }.freeze
-  TTL = 86400
 
   def execute
     args.each_with_object({}) do |input, out|
-      out[input] = cache("yt-latest:#{input}", ttl: TTL) { load_latest(input) } || EMPTY.dup
+      out[input] = cache("yt-latest:#{input}") { load_latest(input) } || EMPTY.dup
     end
   end
 
@@ -75,10 +74,10 @@ class YouTubeChannelLatestVideoPlugin < Plugin
   end
 
   # Accept channel_id (UC…), handle (@name), or YouTube URL → channel_id.
-  # Channel handles rarely change, so disk-cache the resolution for 7 days
-  # to avoid hitting youtube.com twice per build (resolve + feed).
+  # Disk-cached so a network failure falls back to the last good UC ID;
+  # on success the cache is overwritten with the freshly resolved value.
   def resolve_channel_id(input)
-    cache("yt:resolve:#{input}", ttl: 86400 * 7) do
+    cache("yt:resolve:#{input}") do
       str = input.to_s.strip
       return str if str.start_with?('UC') && str.length >= 20 && !str.include?('/')
 

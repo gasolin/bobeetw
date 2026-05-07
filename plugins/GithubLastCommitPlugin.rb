@@ -19,11 +19,9 @@ require 'nokogiri'
 # Use in Liquid:
 #   Last commit: {{ vars.GithubLastCommitPlugin['ZhgChgLi/linkyee'].date }}
 class GithubLastCommitPlugin < Plugin
-  TTL = 86400
-
   def execute
     args.each_with_object({}) do |repo, out|
-      out[repo] = cache("gh-last-commit:#{repo}", ttl: TTL) { load_last_commit(repo) } ||
+      out[repo] = cache("gh-last-commit:#{repo}") { load_last_commit(repo) } ||
                   { 'sha' => '', 'date' => '', 'message' => '' }
     end
   end

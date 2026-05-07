@@ -25,11 +25,10 @@ require 'time'
 #   {% endfor %}
 class RSSFeedPlugin < Plugin
   DEFAULT_LIMIT = 5
-  TTL = 86400
 
   def execute
     args.each_with_object({}) do |url, out|
-      out[url] = cache("rss:#{url}", ttl: TTL) { load_feed(url, DEFAULT_LIMIT) } || []
+      out[url] = cache("rss:#{url}") { load_feed(url, DEFAULT_LIMIT) } || []
     end
   end
 
