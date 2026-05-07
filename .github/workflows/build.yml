@@ -7,26 +7,52 @@ on:
       - .gitignore
       - README.md
       - LICENSE
+      - .claude/**
+      - plugins/README.md
+      - scripts/**
+      - seed-cache.rb
+      - preview.sh
+      - 'themes/**/preview-*.png'
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight (00:00 UTC)
-    
+
+# Prevent racing pushes from overwriting each other on gh-pages.
+# `cancel-in-progress: false` lets every triggered build complete.
+concurrency:
+  group: pages-build
+  cancel-in-progress: false
+
+# Least-privilege token: only what `deploy.sh` needs to force-push to gh-pages.
+permissions:
+  contents: write
+
 jobs:
   continuous-delivery:
 
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v4
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.4.2
           bundler-cache: true
+
+      # The committed .linkyee-cache/ ships with seed data so first-clone
+      # builds work offline. But `git checkout` stamps mtime=now on every
+      # file, which makes `cache(key, ttl: 3600)` see them as fresh and
+      # never re-fetch. Age them so plugins go to the network and pull
+      # live values (star counts, latest commits, RSS, YouTube).
+      - name: Expire plugin cache so CI fetches fresh data
+        run: |
+          if [ -d .linkyee-cache ]; then
+            find .linkyee-cache -type f -name '*.json' -exec touch -d "2 hours ago" {} +
+          fi
 
       - name: Deploy
         run: bash deploy.sh
