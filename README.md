@@ -10,9 +10,9 @@
 
   [![Automatic build](../../actions/workflows/build.yml/badge.svg)](../../actions/workflows/build.yml) [![pages-build-deployment](../../actions/workflows/pages/pages-build-deployment/badge.svg)](../../actions/workflows/pages/pages-build-deployment)
 
-  [**Live Demo →**](https://link.zhgchg.li/)
+  [**Live Demo →**](https://zhgchg.li/linkyee/)
 
-  ![linkyee](https://github.com/user-attachments/assets/f6a1ac98-0f0f-485f-ae2a-9abb57a114d3)
+<img width="1158" height="1092" alt="image" src="https://github.com/user-attachments/assets/45b1ae8f-dfca-40e0-a14e-064c7f45ad1b" />
 
 </div>
 
