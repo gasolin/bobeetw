@@ -113,7 +113,7 @@ theme: minimal-mono   # any directory under ./themes/
 | `glassmorphism` | <img width="200" alt="glassmorphism light" src="./themes/glassmorphism/preview-light.png"> | <img width="200" alt="glassmorphism dark" src="./themes/glassmorphism/preview-dark.png"> | Frosted glass cards · designers, agencies |
 | `paper-card` | <img width="200" alt="paper-card light" src="./themes/paper-card/preview-light.png"> | <img width="200" alt="paper-card dark" src="./themes/paper-card/preview-dark.png"> | Pastel cards · rounded · creators, illustrators |
 | `newsprint` | <img width="200" alt="newsprint light" src="./themes/newsprint/preview-light.png"> | <img width="200" alt="newsprint dark" src="./themes/newsprint/preview-dark.png"> | Newspaper masthead · serif + mono · numbered link rows · the live look of [link.zhgchg.li](https://link.zhgchg.li/) |
-| `terminal-retro` | — *(dark-first)* | <img width="200" alt="terminal-retro dark" src="./themes/terminal-retro/preview-dark.png"> | Green-on-black CRT · scanlines · hackers, infosec |
+| `terminal-retro` | <img width="200" alt="terminal-retro light" src="./themes/terminal-retro/preview-light.png"> | <img width="200" alt="terminal-retro dark" src="./themes/terminal-retro/preview-dark.png"> | CRT · scanlines · phosphor-green-on-black (dark) / olive-on-cream printer-paper (light) · hackers |
 
 Every built-in theme meets the same baseline: WCAG AA contrast, **dark mode that auto-switches with your system appearance** (no manual toggle), responsive down to 320 px, keyboard-accessible focus states, and `prefers-reduced-motion` support.
 

@@ -101,7 +101,7 @@ Every theme must work in both system appearances. The user does not click a butt
 
 - Prefer **CSS-vars-driven palette swap**: define `:root { --bg: ...; --fg: ...; ... }` once, then `@media (prefers-color-scheme: dark) { :root { --bg: ...; ... } }` only changes the values. The rest of the CSS reads `var(--bg)` etc. and never needs duplicate rules. This is the cleanest pattern and the one most built-in themes use.
 - Per-rule overrides are acceptable when only a few properties change (e.g. `default` theme), but the vars approach scales better.
-- `terminal-retro` is the **dark-first reference**: its base palette (green-on-black CRT) already works for both system modes, so it has no `@media` block at all. A short comment in `styles.css` explains why. If a new theme is intentionally dark-only (terminal, hacker, neon, vaporwave-dark), do the same — don't fake a light mode that betrays the genre.
+- `terminal-retro` is the **dark-first reference**: its `:root` defaults are dark (green-on-black CRT), and the LIGHT variant is added via `@media (prefers-color-scheme: light)` (the inverse of the usual pattern) — translating the CRT identity to "deep olive on cream printer-paper". This is the right move when your theme has a dominant identity in one mode: keep that identity dominant, but still translate it into the other mode rather than skipping it. A user who pins `color_scheme: light` deserves SOMETHING that fits the theme, not the dark version unchanged.
 
 **`color_scheme` override (required for new themes):**
 
@@ -128,7 +128,7 @@ Users can pin the page to a specific mode via `color_scheme: auto | light | dark
 
 3. **Verification** — set `color_scheme: light` in `config.yml`, rebuild, force your OS into dark mode. The page should stay light. Set `color_scheme: dark`, force OS to light. Page should stay dark. Set `color_scheme: auto`, toggle OS. Page should swap live.
 
-**Dark-first themes (e.g. CRT, neon)** can ignore `color_scheme: light` — declare this in a CSS comment as `terminal-retro` does. Don't manufacture a light variant that betrays the genre.
+**Dark-first themes (e.g. CRT, neon, vaporwave)** should still ship a light variant — but the light variant should *translate* the genre, not invert it (e.g. `terminal-retro` becomes "olive-on-cream printer paper" in light mode, not a generic light theme). Skipping a light variant is a last resort; a thoughtfully translated one is almost always more respectful of users with `color_scheme: light` set.
 
 **Verification (do not skip):**
 

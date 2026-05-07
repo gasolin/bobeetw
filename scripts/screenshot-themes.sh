@@ -9,7 +9,9 @@
 #   4. Saves both PNGs into themes/<name>/
 #   5. Restores config.yml at the end (or on Ctrl-C)
 #
-# `terminal-retro` is dark-first by design and only gets preview-dark.png.
+# Every theme gets both preview-light.png and preview-dark.png. Themes that
+# read as "dark-first" by identity (e.g. terminal-retro) still ship a light
+# variant — Playwright captures both color schemes regardless.
 #
 # Requirements: bundler + ruby (for the build) and `npx playwright` v1+
 # (already available locally; install via `npm i -g playwright` if missing).
@@ -89,15 +91,10 @@ for theme in "${themes[@]}"; do
 
   out_dir="$ROOT/themes/$theme"
 
-  if [ "$theme" = "terminal-retro" ]; then
-    shoot dark "$out_dir/preview-dark.png"
-    echo "  preview-dark.png  ($(stat -f%z "$out_dir/preview-dark.png" 2>/dev/null || stat -c%s "$out_dir/preview-dark.png") bytes)  [dark-first; no light variant]"
-  else
-    shoot light "$out_dir/preview-light.png"
-    shoot dark  "$out_dir/preview-dark.png"
-    echo "  preview-light.png ($(stat -f%z "$out_dir/preview-light.png" 2>/dev/null || stat -c%s "$out_dir/preview-light.png") bytes)"
-    echo "  preview-dark.png  ($(stat -f%z "$out_dir/preview-dark.png" 2>/dev/null || stat -c%s "$out_dir/preview-dark.png") bytes)"
-  fi
+  shoot light "$out_dir/preview-light.png"
+  shoot dark  "$out_dir/preview-dark.png"
+  echo "  preview-light.png ($(stat -f%z "$out_dir/preview-light.png" 2>/dev/null || stat -c%s "$out_dir/preview-light.png") bytes)"
+  echo "  preview-dark.png  ($(stat -f%z "$out_dir/preview-dark.png" 2>/dev/null || stat -c%s "$out_dir/preview-dark.png") bytes)"
 done
 
 echo
