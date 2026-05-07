@@ -75,9 +75,10 @@ class YouTubeChannelLatestVideoPlugin < Plugin
   end
 
   # Accept channel_id (UC…), handle (@name), or YouTube URL → channel_id.
-  # Caches resolution per build so multiple plugins can reuse it.
+  # Channel handles rarely change, so disk-cache the resolution for 7 days
+  # to avoid hitting youtube.com twice per build (resolve + feed).
   def resolve_channel_id(input)
-    cache("yt:resolve:#{input}") do
+    cache("yt:resolve:#{input}", ttl: 86400 * 7) do
       str = input.to_s.strip
       return str if str.start_with?('UC') && str.length >= 20 && !str.include?('/')
 

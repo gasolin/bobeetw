@@ -56,14 +56,14 @@ seeds = {
 
   # ── YouTubeChannelLatestVideoPlugin (latest video + handle resolver) ──
   'yt-latest:@zhgchgli' => {
-    'title'     => 'Sample latest video title',
-    'url'       => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    'video_id'  => 'dQw4w9WgXcQ',
-    'thumbnail' => 'https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg',
-    'published' => '2026-04-15',
-    'channel'   => 'ZhgChgLi'
+    'title'     => 'AI 變廢為寶 - 用 Claude Design & Claude Code 打造屬於你的個人桌面 Dashboard',
+    'url'       => 'https://www.youtube.com/watch?v=Zu0rbnu_iy8',
+    'video_id'  => 'Zu0rbnu_iy8',
+    'thumbnail' => 'https://i.ytimg.com/vi/Zu0rbnu_iy8/hqdefault.jpg',
+    'published' => '2026-05-03',
+    'channel'   => 'Harry Li'
   },
-  'yt:resolve:@zhgchgli' => 'UCexamplezhgchgliplaceholder0'
+  'yt:resolve:@zhgchgli' => 'UCrO-ZvJhs5XOio0m-Hjb0aQ'
 }
 
 seeds.each do |key, value|
