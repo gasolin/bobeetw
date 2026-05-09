@@ -1,4 +1,7 @@
 <!-- markdownlint-disable-next-line -->
+English | [繁體中文](./README.zh-TW.md)
+
+<!-- markdownlint-disable-next-line -->
 <div align="center">
 
   <!-- markdownlint-disable-next-line -->
