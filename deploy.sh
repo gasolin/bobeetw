@@ -34,7 +34,10 @@ setup_gh() {
   # files that only live there (e.g. CNAME for GitHub Pages custom domains).
   if git ls-remote --exit-code --heads origin "$PAGES_BRANCH" >/dev/null 2>&1; then
     git fetch origin "$PAGES_BRANCH":"$PAGES_BRANCH"
-    git checkout "$PAGES_BRANCH"
+    # build() refreshes tracked cache files (.linkyee-cache/*.json); force the
+    # checkout so those throwaway modifications don't block the switch. flush()
+    # wipes everything except _output/, .git, and CNAME anyway.
+    git checkout -f "$PAGES_BRANCH"
   else
     git checkout -b "$PAGES_BRANCH"
   fi
