@@ -1,41 +1,44 @@
 :root {
-  --bg: #fef6ee;
-  --paper: #fffaf2;
-  --fg: #2d2419;
-  --muted: #7a6b58;
-  --rule: #e8dcc8;
-  --accent: #e07856;
-  --accent-soft: #fde4d8;
-  --shadow: 0 2px 0 rgba(45, 36, 25, 0.04), 0 8px 24px rgba(45, 36, 25, 0.06);
+  --bg: #FCFAF5;
+  --paper: #FFFFFF;
+  --fg: #433221;
+  --muted: #8E7C69;
+  --rule: #F1E3D2;
+  --accent: #D49A15; /* Honey Gold */
+  --accent-soft: #FFF4DD;
+  --accent-red: #C62828; /* Lucky Red */
+  --accent-red-soft: #FFEBEE;
+  --shadow: 0 6px 12px rgba(67, 50, 33, 0.04), 0 16px 40px rgba(67, 50, 33, 0.06);
   --sans: 'Nunito', 'Quicksand', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 }
 
 /* Dark mode. Auto-switches via system appearance unless pinned via
-   `color_scheme: light|dark` in config.yml.
-   Sepia-on-charcoal: the warm pastel theme keeps its friendliness by
-   shifting cream → cream-on-cocoa rather than turning blue-gray. The
-   accent stays terracotta (slightly brighter on dark). */
+   `color_scheme: light|dark` in config.yml. */
 @media (prefers-color-scheme: dark) {
   :root:not(.scheme-light) {
-    --bg: #1c1814;
-    --paper: #2a231c;
-    --fg: #f5e9d8;
-    --muted: #b3a48d;
-    --rule: #3a3128;
-    --accent: #ff9b75;
-    --accent-soft: #3d2a22;
-    --shadow: 0 2px 0 rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+    --bg: #1B1611;
+    --paper: #272018;
+    --fg: #F4EADF;
+    --muted: #BFAFA0;
+    --rule: #3E3225;
+    --accent: #F2AF29; /* Honey Gold in dark mode */
+    --accent-soft: #3D2E1C;
+    --accent-red: #EF5350;
+    --accent-red-soft: #3D1B1B;
+    --shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 16px 40px rgba(0, 0, 0, 0.35);
   }
 }
 :root.scheme-dark {
-  --bg: #1c1814;
-  --paper: #2a231c;
-  --fg: #f5e9d8;
-  --muted: #b3a48d;
-  --rule: #3a3128;
-  --accent: #ff9b75;
-  --accent-soft: #3d2a22;
-  --shadow: 0 2px 0 rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+  --bg: #1B1611;
+  --paper: #272018;
+  --fg: #F4EADF;
+  --muted: #BFAFA0;
+  --rule: #3E3225;
+  --accent: #F2AF29; /* Honey Gold in dark mode */
+  --accent-soft: #3D2E1C;
+  --accent-red: #EF5350;
+  --accent-red-soft: #3D1B1B;
+  --shadow: 0 6px 12px rgba(0, 0, 0, 0.25), 0 16px 40px rgba(0, 0, 0, 0.35);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -268,3 +271,57 @@ a { color: inherit; text-decoration: none; }
   overflow-wrap: anywhere;
   line-height: 1.35;
 }
+
+/* Custom Link Section Headers */
+.link-section-header {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--muted);
+  padding: 24px 8px 8px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px dashed var(--rule);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.link-section-header .section-icon {
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Custom Red Link Button Accent (e.g. for 165 Anti-Fraud) */
+.link-button.link-red {
+  border: 2px solid var(--accent-red-soft);
+}
+
+.link-button.link-red .link-icon {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.link-button.link-red:hover,
+.link-button.link-red:focus-visible {
+  background: var(--accent-red-soft);
+  border-color: var(--accent-red);
+}
+
+.link-button.link-red:hover .link-icon,
+.link-button.link-red:focus-visible .link-icon {
+  background: var(--accent-red);
+  color: var(--paper);
+}
+
+/* Honey Gold themed avatar border & title line */
+.profile-pic-wrap {
+  border: 3px solid var(--accent);
+  padding: 4px;
+}
+
+.profile-pic-wrap::after {
+  background: var(--accent-red);
+}
+
