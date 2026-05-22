@@ -78,7 +78,28 @@ links:
   - link:
       is_header: true
       icon: "fa-solid fa-shield-halved"
-      text: "守護長輩與安心防騙"
+      text: "守護健康"
+
+  - link:
+      icon: "fa-solid fa-circle-check"
+      text: "💪 BoBee 叮嚀：日常健康評估 <span class='link-button-text'>(查核 Line 常見的假消息、偏方與謠言)</span>"
+      url: "https://tjcare1.lovable.app/"
+      alt: "BoBee 叮嚀：日常健康評估"
+      title: "日常健康評估"
+      target: "_blank"
+
+  - link:
+      is_header: true
+      icon: "fa-solid fa-shield-halved"
+      text: "安心防騙"
+
+  - link:
+      icon: "fa-solid fa-circle-check"
+      text: "✅ BoBee 叮嚀：假訊息查證 <span class='link-button-text'>(查核 Line 常見的假消息、偏方與謠言)</span>"
+      url: "https://www.mygopen.com/"
+      alt: "BoBee 叮嚀：假訊息查證"
+      title: "假訊息查證"
+      target: "_blank"
 
   - link:
       icon: "fa-solid fa-shield-heart"
@@ -88,14 +109,6 @@ links:
       title: "165 全民防騙網"
       target: "_blank"
       style_type: "red"
-
-  - link:
-      icon: "fa-solid fa-circle-check"
-      text: "✅ BoBee 叮嚀：假訊息查證 <span class='link-button-text'>(查核 Line 常見的假消息、偏方與謠言)</span>"
-      url: "https://www.mygopen.com/"
-      alt: "BoBee 叮嚀：假訊息查證"
-      title: "假訊息查證"
-      target: "_blank"
 
 # -----------------------------------------------------------------------------
 # Social media buttons (optional, can be empty)
