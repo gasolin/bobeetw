@@ -43,8 +43,8 @@ tagline: "跟著保庇小蜂，天天領福氣。🐝"
 links:
   - link:
       is_header: true
-      icon: "fa-solid fa-hive"
-      text: "核心連結與實用工具"
+      icon: "fa-brands fa-facebook"
+      text: "BoBee 粉絲團"
 
   - link:
       icon: "fa-brands fa-facebook"
@@ -53,6 +53,11 @@ links:
       alt: "點我進入：BoBee 粉絲團"
       title: "BoBee 粉絲團"
       target: "_blank"
+
+  - link:
+      is_header: true
+      icon: "fa-solid fa-hive"
+      text: "實用工具"
 
   - link:
       icon: "fa-solid fa-calendar-days"
@@ -65,7 +70,7 @@ links:
   - link:
       icon: "fa-solid fa-calendar-check"
       text: "✅ BoBee 嚴選：神明誕辰行事曆 <span class='link-button-text'>(掌握神明誕辰，祈福平安不漏接)</span>"
-      url: "https://zh.wikipedia.org/wiki/%E7%A5%9E%E8%AA%95"
+      url: "https://www.fude.studio/calendar/app"
       alt: "BoBee 嚴選：神明誕辰行事曆"
       title: "神明誕辰行事曆"
       target: "_blank"
@@ -77,7 +82,7 @@ links:
 
   - link:
       icon: "fa-solid fa-shield-heart"
-      text: "🚫 BoBee 叮嚀：165 全民防騙網 <span class='link-button-text'>(守護長輩錢包，詐騙退散！)</span>"
+      text: "🚫 BoBee 叮嚀：165 全民防騙網 <span class='link-button-text'>(守護錢包，詐騙退散！)</span>"
       url: "https://165.npa.gov.tw/"
       alt: "BoBee 叮嚀：165 全民防騙網"
       title: "165 全民防騙網"
