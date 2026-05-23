@@ -7,8 +7,11 @@ unless File.exist?("config.yml")
     raise "Error: config.yml not found."
 end
 
-# Permit Date/Time so users can write unquoted YAML dates (e.g. for CountdownPlugin).
-settings = YAML.load_file("config.yml", permitted_classes: [Date, Time, Symbol]) || {}
+begin
+  settings = YAML.load_file("config.yml", permitted_classes: [Date, Time, Symbol]) || {}
+rescue ArgumentError
+  settings = YAML.load_file("config.yml") || {}
+end
 
 #
 source_dir = "./themes/#{settings["theme"] || "default"}"
