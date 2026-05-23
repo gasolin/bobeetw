@@ -82,7 +82,7 @@ links:
 
   - link:
       icon: "fa-solid fa-circle-check"
-      text: "💪 BoBee 叮嚀：日常健康評估 <span class='link-button-text'>(查核 Line 常見的假消息、偏方與謠言)</span>"
+      text: "💪 BoBee 叮嚀：日常健康評估 <span class='link-button-text'>(關心自己吃得健不健康，生活自理輕不輕鬆)</span>"
       url: "https://tjcare1.lovable.app/"
       alt: "BoBee 叮嚀：日常健康評估"
       title: "日常健康評估"
