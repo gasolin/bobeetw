@@ -48,7 +48,7 @@ links:
 
   - link:
       icon: "fa-brands fa-facebook"
-      text: "🏆 點我進入：BoBee 粉絲團 <span class='link-button-text'>(追蹤保庇小蜂，天天領福氣)</span>"
+      text: "👍 點我進入：BoBee 粉絲團 <span class='link-button-text'>(追蹤保庇小蜂，天天領福氣)</span>"
       url: "https://www.facebook.com/"
       alt: "點我進入：BoBee 粉絲團"
       title: "BoBee 粉絲團"
@@ -61,7 +61,7 @@ links:
 
   - link:
       icon: "fa-solid fa-calendar-days"
-      text: "✅ BoBee 嚴選：線上農民曆 <span class='link-button-text'>(每日宜忌、節氣沖煞與吉時查詢)</span>"
+      text: "📅 BoBee 嚴選：線上農民曆 <span class='link-button-text'>(每日宜忌、節氣沖煞與吉時查詢)</span>"
       url: "https://goodaytw.com/"
       alt: "BoBee 嚴選：線上農民曆"
       title: "線上農民曆"
@@ -69,7 +69,7 @@ links:
 
   - link:
       icon: "fa-solid fa-calendar-check"
-      text: "✅ BoBee 嚴選：神明誕辰行事曆 <span class='link-button-text'>(掌握神明誕辰，祈福平安不漏接)</span>"
+      text: "🙏 BoBee 嚴選：神明誕辰行事曆 <span class='link-button-text'>(掌握神明誕辰，祈福平安不漏接)</span>"
       url: "https://www.fude.studio/calendar/app"
       alt: "BoBee 嚴選：神明誕辰行事曆"
       title: "神明誕辰行事曆"
@@ -82,7 +82,7 @@ links:
 
   - link:
       icon: "fa-solid fa-clipboard-check"
-      text: "💪 BoBee 嚴選：日常健康評估 <span class='link-button-text'>(關心自己吃得健不健康，生活自理輕不輕鬆)</span>"
+      text: "❤️ BoBee 嚴選：日常健康評估 <span class='link-button-text'>(關心自己吃得健不健康，生活自理輕不輕鬆)</span>"
       url: "https://tjcare1.lovable.app/"
       alt: "BoBee 嚴選：日常健康評估"
       title: "日常健康評估"
@@ -103,7 +103,7 @@ links:
 
   - link:
       icon: "fa-solid fa-phone-volume"
-      text: "🚫 BoBee 嚴選：165 全民防騙網 <span class='link-button-text'>(守護錢包，詐騙退散！)</span>"
+      text: "🚨 BoBee 嚴選：165 全民防騙網 <span class='link-button-text'>(守護錢包，詐騙退散！)</span>"
       url: "https://165.npa.gov.tw/"
       alt: "BoBee 嚴選：165 全民防騙網"
       title: "165 全民防騙網"
