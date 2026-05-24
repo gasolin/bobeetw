@@ -56,7 +56,7 @@ links:
 
   - link:
       is_header: true
-      icon: "fa-solid fa-hive"
+      icon: "fa-solid fa-hands-praying"
       text: "誠心敬意"
 
   - link:
@@ -77,11 +77,11 @@ links:
 
   - link:
       is_header: true
-      icon: "fa-solid fa-shield-halved"
+      icon: "fa-solid fa-heart-pulse"
       text: "守護健康"
 
   - link:
-      icon: "fa-solid fa-circle-check"
+      icon: "fa-solid fa-clipboard-check"
       text: "💪 BoBee 嚴選：日常健康評估 <span class='link-button-text'>(關心自己吃得健不健康，生活自理輕不輕鬆)</span>"
       url: "https://tjcare1.lovable.app/"
       alt: "BoBee 嚴選：日常健康評估"
@@ -94,7 +94,7 @@ links:
       text: "安心防騙"
 
   - link:
-      icon: "fa-solid fa-circle-check"
+      icon: "fa-solid fa-magnifying-glass"
       text: "🔍 BoBee 嚴選：網路傳聞看清楚<span class='link-button-text'>(先求證再轉傳，真心分享不漏氣)</span>"
       url: "https://www.mygopen.com/"
       alt: "BoBee 嚴選：網路傳聞看清楚"
@@ -102,7 +102,7 @@ links:
       target: "_blank"
 
   - link:
-      icon: "fa-solid fa-shield-heart"
+      icon: "fa-solid fa-phone-volume"
       text: "🚫 BoBee 嚴選：165 全民防騙網 <span class='link-button-text'>(守護錢包，詐騙退散！)</span>"
       url: "https://165.npa.gov.tw/"
       alt: "BoBee 嚴選：165 全民防騙網"
