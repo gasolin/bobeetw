@@ -27,7 +27,7 @@ google_analytics_id:
 title: "BoBee 有拜有保庇"
 avatar: "./images/profile.jpg"
 name: "BoBee 有拜有保庇"
-tagline: "跟著保庇小蜂，天天領福氣。🐝"
+tagline: "追蹤保庇小蜂，天天領福氣。🐝"
 
 # -----------------------------------------------------------------------------
 # Links
@@ -48,7 +48,7 @@ links:
 
   - link:
       icon: "fa-brands fa-facebook"
-      text: "🏆 點我進入：BoBee 粉絲團 <span class='link-button-text'>(跟著保庇小蜂，天天領福氣)</span>"
+      text: "🏆 點我進入：BoBee 粉絲團 <span class='link-button-text'>(追蹤保庇小蜂，天天領福氣)</span>"
       url: "https://www.facebook.com/"
       alt: "點我進入：BoBee 粉絲團"
       title: "BoBee 粉絲團"
@@ -57,7 +57,7 @@ links:
   - link:
       is_header: true
       icon: "fa-solid fa-hive"
-      text: "實用工具"
+      text: "誠心敬意"
 
   - link:
       icon: "fa-solid fa-calendar-days"
@@ -82,9 +82,9 @@ links:
 
   - link:
       icon: "fa-solid fa-circle-check"
-      text: "💪 BoBee 叮嚀：日常健康評估 <span class='link-button-text'>(關心自己吃得健不健康，生活自理輕不輕鬆)</span>"
+      text: "💪 BoBee 嚴選：日常健康評估 <span class='link-button-text'>(關心自己吃得健不健康，生活自理輕不輕鬆)</span>"
       url: "https://tjcare1.lovable.app/"
-      alt: "BoBee 叮嚀：日常健康評估"
+      alt: "BoBee 嚴選：日常健康評估"
       title: "日常健康評估"
       target: "_blank"
 
@@ -95,17 +95,17 @@ links:
 
   - link:
       icon: "fa-solid fa-circle-check"
-      text: "✅ BoBee 叮嚀：假訊息查證 <span class='link-button-text'>(查核 Line 常見的假消息、偏方與謠言)</span>"
+      text: "🔍 BoBee 嚴選：網路傳聞看清楚<span class='link-button-text'>(先求證再轉傳，真心分享不漏氣)</span>"
       url: "https://www.mygopen.com/"
-      alt: "BoBee 叮嚀：假訊息查證"
+      alt: "BoBee 嚴選：網路傳聞看清楚"
       title: "假訊息查證"
       target: "_blank"
 
   - link:
       icon: "fa-solid fa-shield-heart"
-      text: "🚫 BoBee 叮嚀：165 全民防騙網 <span class='link-button-text'>(守護錢包，詐騙退散！)</span>"
+      text: "🚫 BoBee 嚴選：165 全民防騙網 <span class='link-button-text'>(守護錢包，詐騙退散！)</span>"
       url: "https://165.npa.gov.tw/"
-      alt: "BoBee 叮嚀：165 全民防騙網"
+      alt: "BoBee 嚴選：165 全民防騙網"
       title: "165 全民防騙網"
       target: "_blank"
       style_type: "red"
@@ -125,10 +125,10 @@ socials:
 # Footer
 # -----------------------------------------------------------------------------
 footer: >
-  保庇小蜂關心您！與長輩一同守護幸福平安，天天福氣滿滿。 🍯
+  保庇小蜂關心您！與您一同守護幸福平安，天天福氣滿滿。 🍯
   <br>
   如有任何防詐騙或假訊息疑慮，請善用 165 專線與 MyGoPen 查證服務。
 
 # Footer copyright message
 copyright: >
-  © {{ year }} <a href="https://github.com/gasolin/bobeetw" target="_blank">BoBee 有拜有保庇</a>. Powered by <a href="https://github.com/ZhgChgLi/linkyee" target="_blank">linkyee</a>
+  © {{ year }} <a href="https://gasolin.idv.tw/" target="_blank">BoBee 有拜有保庇</a>. Powered by <a href="https://github.com/ZhgChgLi/linkyee" target="_blank">linkyee</a>
