@@ -27,7 +27,7 @@ google_analytics_id:
 title: "BoBee 有拜有保庇"
 avatar: "./images/profile.jpg"
 name: "BoBee 有拜有保庇"
-tagline: "追蹤保庇小蜂，天天領福氣。🐝"
+tagline: "跟著保庇小蜂，天天領福氣、保平安。🐝"
 
 # -----------------------------------------------------------------------------
 # Links
@@ -48,7 +48,7 @@ links:
 
   - link:
       icon: "fa-brands fa-facebook"
-      text: "👍 點我進入：BoBee 粉絲團 <span class='link-button-text'>(追蹤保庇小蜂，天天領福氣)</span>"
+      text: "👍 點我進入：BoBee 粉絲團 <span class='link-button-text'>(按讚關注保庇小蜂，天天領福氣)</span>"
       url: "https://www.facebook.com/"
       alt: "點我進入：BoBee 粉絲團"
       title: "BoBee 粉絲團"
@@ -61,7 +61,7 @@ links:
 
   - link:
       icon: "fa-solid fa-calendar-days"
-      text: "📅 BoBee 嚴選：線上農民曆 <span class='link-button-text'>(每日宜忌、節氣沖煞與吉時查詢)</span>"
+      text: "📅 BoBee 嚴選：線上農民曆 <span class='link-button-text'>(看每日吉凶宜忌、節氣沖煞，好日子輕鬆查)</span>"
       url: "https://goodaytw.com/"
       alt: "BoBee 嚴選：線上農民曆"
       title: "線上農民曆"
@@ -69,7 +69,7 @@ links:
 
   - link:
       icon: "fa-solid fa-calendar-check"
-      text: "🙏 BoBee 嚴選：神明誕辰行事曆 <span class='link-button-text'>(掌握神明誕辰，祈福平安不漏接)</span>"
+      text: "🙏 BoBee 嚴選：神明誕辰行事曆 <span class='link-button-text'>(神明誕辰拜拜求平安，福氣好運天天來)</span>"
       url: "https://www.fude.studio/calendar/app"
       alt: "BoBee 嚴選：神明誕辰行事曆"
       title: "神明誕辰行事曆"
@@ -82,10 +82,10 @@ links:
 
   - link:
       icon: "fa-solid fa-clipboard-check"
-      text: "❤️ BoBee 嚴選：日常健康評估 <span class='link-button-text'>(關心自己吃得健不健康，生活自理輕不輕鬆)</span>"
+      text: "❤️ BoBee 嚴選：日常健康簡單測 <span class='link-button-text'>(動動手指，關心自己吃得好不好、日常活動好輕鬆)</span>"
       url: "https://tjcare1.lovable.app/"
-      alt: "BoBee 嚴選：日常健康評估"
-      title: "日常健康評估"
+      alt: "BoBee 嚴選：日常健康簡單測"
+      title: "日常健康簡單測"
       target: "_blank"
 
   - link:
@@ -95,15 +95,15 @@ links:
 
   - link:
       icon: "fa-solid fa-magnifying-glass"
-      text: "🔍 BoBee 嚴選：網路傳聞看清楚<span class='link-button-text'>(先求證再轉傳，真心分享不漏氣)</span>"
+      text: "🔍 BoBee 嚴選：網路傳言看真假 <span class='link-button-text'>(先查證再轉傳，真心分享不漏氣)</span>"
       url: "https://www.mygopen.com/"
-      alt: "BoBee 嚴選：網路傳聞看清楚"
-      title: "假訊息查證"
+      alt: "BoBee 嚴選：網路傳言看真假"
+      title: "網路傳言看真假"
       target: "_blank"
 
   - link:
       icon: "fa-solid fa-phone-volume"
-      text: "🚨 BoBee 嚴選：165 全民防騙網 <span class='link-button-text'>(守護錢包，詐騙退散！)</span>"
+      text: "🚨 BoBee 嚴選：165 全民防騙網 <span class='link-button-text'>(守護辛苦錢與養老金，小心詐騙不上當！)</span>"
       url: "https://165.npa.gov.tw/"
       alt: "BoBee 嚴選：165 全民防騙網"
       title: "165 全民防騙網"
@@ -127,7 +127,7 @@ socials:
 footer: >
   保庇小蜂關心您！與您一同守護幸福平安，天天福氣滿滿。 🍯
   <br>
-  如有任何防詐騙或假訊息疑慮，請善用 165 專線與 MyGoPen 查證服務。
+  如有任何防詐騙或假消息的疑慮，歡迎免費撥打 165 專線，或用 MyGoPen 來查證，讓您安心又放心。
 
 # Footer copyright message
 copyright: >
