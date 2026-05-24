@@ -45,10 +45,10 @@
       {% for item in links %}
         {% assign link = item.link %}
         {% if link.is_header %}
-          <div class="link-section-header">
+          <h2 class="link-section-header">
             {% if link.icon %}<span class="section-icon"><i class="{{ link.icon }}"></i></span>{% endif %}
             <span class="section-text">{{ link.text }}</span>
-          </div>
+          </h2>
         {% else %}
           <a href="{{ link.url }}" target="{{ link.target }}" class="link-button{% if link.latest %} link-latest{% endif %}{% if link.style_type %} link-{{ link.style_type }}{% endif %}" alt="{{ link.alt }}" title="{{ link.title }}">
             {% if link.latest %}<span class="link-latest-badge" aria-hidden="true">New</span>{% endif %}
@@ -63,7 +63,7 @@
       <div class="button-group">
         {% for item in socials %}
           {% assign social = item.social %}
-          <a href="{{ social.url }}" title="{{ social.title }}" target="{{ social.target }}" class="icon-button" alt="{{ social.alt }}">
+          <a href="{{ social.url }}" title="{{ social.title }}" target="{{ social.target }}" class="icon-button" aria-label="{{ social.title }}">
             <i class="{{ social.icon }}"></i>
           </a>
         {% endfor %}
