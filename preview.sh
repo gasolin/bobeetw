@@ -61,7 +61,11 @@ if [ -n "$THEME" ]; then
 fi
 
 build_site() {
-  ( cd "$ROOT" && bundle exec ruby ./scaffold.rb )
+  if [ -x "/opt/homebrew/opt/ruby/bin/ruby" ]; then
+    ( cd "$ROOT" && /opt/homebrew/opt/ruby/bin/ruby ./scaffold.rb )
+  else
+    ( cd "$ROOT" && bundle exec ruby ./scaffold.rb )
+  fi
 }
 
 echo "Building site..."

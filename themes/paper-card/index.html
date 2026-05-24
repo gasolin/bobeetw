@@ -49,9 +49,22 @@
             {% if link.icon %}<span class="section-icon"><i class="{{ link.icon }}"></i></span>{% endif %}
             <span class="section-text">{{ link.text }}</span>
           </h2>
+          {% if link.text == "誠心敬意" %}
+            <div class="pray-schedule-switcher">
+              <button class="pray-tab-btn active" id="tab-btn-15" onclick="selectPraySchedule('1-15')">🏡 家庭拜 (初一/十五)</button>
+              <button class="pray-tab-btn" id="tab-btn-16" onclick="selectPraySchedule('2-16')">💼 商家拜 (初二/十六)</button>
+            </div>
+          {% endif %}
         {% else %}
-          <a href="{{ link.url }}" target="{{ link.target }}" class="link-button{% if link.latest %} link-latest{% endif %}{% if link.style_type %} link-{{ link.style_type }}{% endif %}" alt="{{ link.alt }}" title="{{ link.title }}">
-            {% if link.latest %}<span class="link-latest-badge" aria-hidden="true">New</span>{% endif %}
+          <a href="{{ link.url }}" target="{{ link.target }}" class="link-button{% if link.latest %} link-latest{% endif %}{% if link.style_type %} link-{{ link.style_type }}{% endif %}" alt="{{ link.alt }}" title="{{ link.title }}"
+             {% if link.id %}id="{{ link.id }}"{% endif %}
+             {% if link.id == "pray-countdown" %}
+               data-opt-15-title="{{ vars.LunarCountdownPlugin.closer_15.title }}"
+               data-opt-15-subtitle="{{ vars.LunarCountdownPlugin.closer_15.subtitle }}"
+               data-opt-16-title="{{ vars.LunarCountdownPlugin.closer_16.title }}"
+               data-opt-16-subtitle="{{ vars.LunarCountdownPlugin.closer_16.subtitle }}"
+             {% endif %}>
+            {% if link.latest %}<span class="link-latest-badge" aria-hidden="true">{% if link.latest_text %}{{ link.latest_text }}{% else %}最新{% endif %}</span>{% endif %}
             <span class="link-icon" aria-hidden="true"><i class="{{ link.icon }}"></i></span>
             <span class="link-text">{{ link.text }}</span>
           </a>

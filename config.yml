@@ -14,7 +14,8 @@ color_scheme: auto
 # -----------------------------------------------------------------------------
 # Plugins
 # -----------------------------------------------------------------------------
-plugins: []
+plugins:
+  - LunarCountdownPlugin: []
 
 # -----------------------------------------------------------------------------
 # Tracking
@@ -58,6 +59,16 @@ links:
       is_header: true
       icon: "fa-solid fa-hands-praying"
       text: "誠心敬意"
+
+  - link:
+      id: "pray-countdown"
+      icon: "fa-solid fa-bell"
+      text: "<span id='pray-title-span'>{{ vars.LunarCountdownPlugin.closer_15.title }}</span><span class='link-button-text' id='pray-subtitle-span'>{{ vars.LunarCountdownPlugin.closer_15.subtitle }}</span>"
+      url: "https://www.fude.studio/calendar/app"
+      alt: "下一個拜拜日提醒"
+      title: "下一個拜拜日提醒"
+      target: "_blank"
+      style_type: "latest"
 
   - link:
       icon: "fa-solid fa-calendar-days"
