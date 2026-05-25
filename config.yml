@@ -64,7 +64,7 @@ links:
       id: "pray-countdown"
       icon: "fa-solid fa-bell"
       text: "<span id='pray-title-span'>{{ vars.LunarCountdownPlugin.closer_15.title }}</span><span class='link-button-text' id='pray-subtitle-span'>{{ vars.LunarCountdownPlugin.closer_15.subtitle }}</span>"
-      url: "https://www.fude.studio/calendar/app"
+      url: "https://goodaytw.com/"
       alt: "下一個拜拜日提醒"
       title: "下一個拜拜日提醒"
       target: "_blank"
