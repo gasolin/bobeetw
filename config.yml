@@ -101,6 +101,19 @@ links:
 
   - link:
       is_header: true
+      icon: "fa-solid fa-radio"
+      text: "心靈隨身聽"
+
+  - link:
+      icon: "fa-solid fa-music"
+      text: "BoBee 嚴選：阿彌陀佛電台 <span class='link-button-text'>(佛音常伴、心靈清淨保平安 🌸)</span>"
+      url: "https://music.youtube.com/@amitabharadio"
+      alt: "BoBee 嚴選：阿彌陀佛電台"
+      title: "阿彌陀佛電台"
+      target: "_blank"
+
+  - link:
+      is_header: true
       icon: "fa-solid fa-shield-halved"
       text: "安心防騙"
 
