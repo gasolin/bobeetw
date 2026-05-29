@@ -98,10 +98,10 @@ class LunarCountdownPlugin < Plugin
     if closer_15
       if closer_15["days"] == 0
         title_15 = "今天就是農曆#{closer_15['type']}喔！"
-        subtitle_15 = "(保庇小蜂提醒您，記得準備供品求平安喔！聲明：誠心最重要 🐝)"
+        subtitle_15 = "(記得準備供品求平安喔！聲明：誠心最重要 🐝)"
       else
         title_15 = "下一個拜拜日：農曆#{closer_15['type']}"
-        subtitle_15 = "(保庇小蜂提醒您，距離拜拜求平安還有 #{closer_15['days']} 天 🐝)"
+        subtitle_15 = "(距離拜拜求平安還有 #{closer_15['days']} 天 🐝)"
       end
     end
 
@@ -110,10 +110,10 @@ class LunarCountdownPlugin < Plugin
     if closer_16
       if closer_16["days"] == 0
         title_16 = "今天就是農曆#{closer_16['type']}喔！"
-        subtitle_16 = "(保庇小蜂提醒您，記得做牙求財源、迎財神喔！🐝)"
+        subtitle_16 = "(記得做牙求財源、迎財神喔！🐝)"
       else
         title_16 = "下一個做牙日：農曆#{closer_16['type']}"
-        subtitle_16 = "(保庇小蜂提醒您，距離做牙求財源還有 #{closer_16['days']} 天 🐝)"
+        subtitle_16 = "(距離做牙求財源還有 #{closer_16['days']} 天 🐝)"
       end
     end
 
