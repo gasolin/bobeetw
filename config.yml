@@ -50,7 +50,7 @@ links:
   - link:
       icon: "fa-brands fa-facebook"
       text: "點我進入：BoBee 粉絲團 <span class='link-button-text'>(按讚關注保庇小蜂，天天領福氣)</span>"
-      url: "https://www.facebook.com/"
+      url: "https://www.facebook.com/profile.php?id=61590633894057"
       alt: "點我進入：BoBee 粉絲團"
       title: "BoBee 粉絲團"
       target: "_blank"
@@ -127,7 +127,7 @@ links:
 socials:
   - social:
       icon: "fa-brands fa-facebook"
-      url: "https://www.facebook.com/"
+      url: "https://www.facebook.com/profile.php?id=61590633894057"
       title: "BoBee Facebook"
       alt: "BoBee Facebook Page"
       target: "_blank"
