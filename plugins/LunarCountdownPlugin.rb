@@ -57,14 +57,14 @@ class LunarCountdownPlugin < Plugin
     closer_15 = nil
     if chuyi_delta && shiwu_delta
       if chuyi_delta < shiwu_delta
-        closer_15 = { "type" => "初一", "days" => chuyi_delta }
+        closer_15 = { "type" => "初一", "days" => chuyi_delta, "date" => next_chuyi }
       else
-        closer_15 = { "type" => "十五", "days" => shiwu_delta }
+        closer_15 = { "type" => "十五", "days" => shiwu_delta, "date" => next_shiwu }
       end
     elsif chuyi_delta
-      closer_15 = { "type" => "初一", "days" => chuyi_delta }
+      closer_15 = { "type" => "初一", "days" => chuyi_delta, "date" => next_chuyi }
     elsif shiwu_delta
-      closer_15 = { "type" => "十五", "days" => shiwu_delta }
+      closer_15 = { "type" => "十五", "days" => shiwu_delta, "date" => next_shiwu }
     end
 
     # 2. Option B: 初二 / 十六 (Business Schedule)
@@ -80,14 +80,14 @@ class LunarCountdownPlugin < Plugin
     closer_16 = nil
     if chuei_delta && shiliu_delta
       if chuei_delta < shiliu_delta
-        closer_16 = { "type" => "初二", "days" => chuei_delta }
+        closer_16 = { "type" => "初二", "days" => chuei_delta, "date" => next_chuei }
       else
-        closer_16 = { "type" => "十六", "days" => shiliu_delta }
+        closer_16 = { "type" => "十六", "days" => shiliu_delta, "date" => next_shiliu }
       end
     elsif chuei_delta
-      closer_16 = { "type" => "初二", "days" => chuei_delta }
+      closer_16 = { "type" => "初二", "days" => chuei_delta, "date" => next_chuei }
     elsif shiliu_delta
-      closer_16 = { "type" => "十六", "days" => shiliu_delta }
+      closer_16 = { "type" => "十六", "days" => shiliu_delta, "date" => next_shiliu }
     end
 
     # Define high-contrast, two-level visual titles & subtitles
@@ -95,25 +95,29 @@ class LunarCountdownPlugin < Plugin
     # Chinese typography proofread: removed all redundant spaces between Chinese characters.
     title_15 = ""
     subtitle_15 = ""
+    date_str_15 = nil
     if closer_15
+      date_str_15 = "#{closer_15['date'].month}/#{closer_15['date'].day}"
       if closer_15["days"] == 0
         title_15 = "今天就是農曆#{closer_15['type']}喔！"
         subtitle_15 = "(記得準備供品求平安喔！聲明：誠心最重要 🐝)"
       else
-        title_15 = "下一個拜拜日：農曆#{closer_15['type']}"
-        subtitle_15 = "(距離拜拜求平安還有 #{closer_15['days']} 天 🐝)"
+        title_15 = "下一個拜拜日：#{date_str_15}"
+        subtitle_15 = "(農曆#{closer_15['type']}，距離拜拜求平安還有 #{closer_15['days']} 天 🐝)"
       end
     end
 
     title_16 = ""
     subtitle_16 = ""
+    date_str_16 = nil
     if closer_16
+      date_str_16 = "#{closer_16['date'].month}/#{closer_16['date'].day}"
       if closer_16["days"] == 0
         title_16 = "今天就是農曆#{closer_16['type']}喔！"
         subtitle_16 = "(記得做牙求財源、迎財神喔！🐝)"
       else
-        title_16 = "下一個做牙日：農曆#{closer_16['type']}"
-        subtitle_16 = "(距離做牙求財源還有 #{closer_16['days']} 天 🐝)"
+        title_16 = "下一個做牙日：#{date_str_16}"
+        subtitle_16 = "(農曆#{closer_16['type']}，距離做牙求財源還有 #{closer_16['days']} 天 🐝)"
       end
     end
 
@@ -121,12 +125,16 @@ class LunarCountdownPlugin < Plugin
       "closer_15" => {
         "type" => closer_15&.dig("type"),
         "days" => closer_15&.dig("days"),
+        "date" => closer_15&.dig("date")&.to_s,
+        "date_display" => date_str_15,
         "title" => title_15,
         "subtitle" => subtitle_15
       },
       "closer_16" => {
         "type" => closer_16&.dig("type"),
         "days" => closer_16&.dig("days"),
+        "date" => closer_16&.dig("date")&.to_s,
+        "date_display" => date_str_16,
         "title" => title_16,
         "subtitle" => subtitle_16
       }
