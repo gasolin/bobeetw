@@ -100,6 +100,14 @@ links:
       target: "_blank"
 
   - link:
+      icon: "fa-solid fa-house-medical"
+      text: "BoBee 嚴選：愛長照長照關懷站 <span class='link-button-text'>(長照知識、照護資源與熟齡健康，貼心照顧全家人)</span>"
+      url: "https://www.ilong-termcare.com/"
+      alt: "BoBee 嚴選：愛長照長照關懷站"
+      title: "愛長照長照關懷站"
+      target: "_blank"
+
+  - link:
       is_header: true
       icon: "fa-solid fa-shield-halved"
       text: "安心防騙"
@@ -137,9 +145,6 @@ socials:
 # -----------------------------------------------------------------------------
 footer: >
   保庇小蜂關心您！與您一同守護幸福平安，<br/><a href="https://www.facebook.com/profile.php?id=61590633894057" target="_blank">加入粉絲團</a>，天天福氣滿滿。 🍯
-  <br>
-  如有任何防詐騙或假消息的疑慮，歡迎免費撥打 165 專線，或用 MyGoPen 來查證，讓您安心又放心。
-
 # Footer copyright message
 copyright: >
   © {{ year }} <a href="https://gasolin.idv.tw/" target="_blank">BoBee 有拜有保庇</a>. Powered by <a href="https://github.com/ZhgChgLi/linkyee" target="_blank">linkyee</a>
