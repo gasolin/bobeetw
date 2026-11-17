@@ -51,6 +51,22 @@ Dir.glob("#{source_dir}/**/*").each do |entry|
   end
 end
 
+# Copy static assets and pages from ./public/ if present
+public_dir = "./public"
+if Dir.exist?(public_dir)
+  Dir.glob("#{public_dir}/**/*").each do |entry|
+    relative_path = entry.sub("#{public_dir}/", '')
+    new_location = File.join(destination_dir, relative_path)
+
+    if File.directory?(entry)
+      FileUtils.mkdir_p(new_location)
+    else
+      FileUtils.mkdir_p(File.dirname(new_location))
+      FileUtils.cp(entry, new_location)
+    end
+  end
+end
+
 
 source_template = "#{source_dir}/index.html"
 template_file = "#{destination_dir}/index.html"

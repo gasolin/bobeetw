@@ -71,7 +71,7 @@ build_site() {
 echo "Building site..."
 build_site
 
-WATCH_PATHS=(themes plugins config.yml scaffold.rb)
+WATCH_PATHS=(themes plugins config.yml scaffold.rb public)
 
 start_watcher() {
   if command -v fswatch >/dev/null 2>&1; then
