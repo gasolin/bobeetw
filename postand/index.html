@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>擺攤速 POStand — 客人排隊時，點一下就收好錢｜市集與夜市離線收銀記帳 App</title>
+<meta name="description" content="市集、夜市、同人展、餐車攤主的離線收銀小幫手。點商品自動算總價、幫你算找零、收攤帳目一秒對好。沒網路也能用、不用註冊、沒有廣告。">
+<meta name="keywords" content="擺攤速, POStand, 市集收銀, 擺攤記帳, 離線POS, 文創市集, 夜市收銀, 同人展收銀, 餐車記帳, 找零計算, 攤位對帳">
+<link rel="canonical" href="https://bobee.tw/postand/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bobee.tw/postand/">
+<meta property="og:site_name" content="擺攤速 POStand">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:title" content="擺攤速 POStand — 客人排隊時，點一下就收好錢">
+<meta property="og:description" content="點商品自動算總價、幫你算找零、收攤帳目一秒對好。沒網路也能用、不用註冊、沒有廣告。">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="擺攤速 POStand — 客人排隊時，點一下就收好錢">
+<meta name="twitter:description" content="市集、夜市、同人展、餐車攤主的離線收銀小幫手。點商品自動算總價、幫你算找零、收攤帳目一秒對好。沒網路也能用、不用註冊、沒有廣告。">
+
+<meta name="theme-color" content="#10B981">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+<!-- Schema.org Structured Data for SEO & AEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://bobee.tw/postand/#app",
+      "name": "擺攤速 POStand",
+      "alternateName": ["POStand", "擺攤速"],
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "iOS, Android",
+      "description": "專為文創市集、夜市、同人展與餐車攤主設計的離線收銀記帳 App。支援無網路環境自動算總價、找零計算、攤租損益打平提示與一秒對帳。",
+      "url": "https://bobee.tw/postand/",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TWD"
+      },
+      "featureList": [
+        "離線收銀無須網路",
+        "無須註冊無廣告",
+        "自動找零計算",
+        "營業額保密暫離模式",
+        "攤租損益回本即時試算",
+        "收攤快速對帳與匯出"
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Bobee",
+        "url": "https://bobee.tw"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bobee.tw/postand/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "沒有網路或訊號不好的市集也能用擺攤速收銀嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。擺攤速採用 100% 離線優先架構設計，所有商品計算、找零與紀錄皆在手機本機即時完成，地下室展場、山區市集或人潮擁擠的夜市都能順暢收錢。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "擺攤速需要註冊帳號或每個月繳訂閱費嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。打開 App 即可直接開賣，不需填寫個資或註冊帳號，基本收銀、算找零、收攤對帳功能永久免費且沒有廣告干擾。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的每日擺攤營業額與商品帳目會被上傳到雲端嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。所有商品資料與每日銷售紀錄僅儲存在您自己的手機加密資料庫中，不上傳至外部伺服器，確保營業隱私安全。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "擺攤中途想離開洗手間或託人顧攤，會被看到今天賺多少錢嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。擺攤速內建一鍵「暫離模式」，幫忙顧攤的人依然可以正常點單收銀，但今天的所有營業額與統計數字會立即隱藏保密。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "擺攤跨夜（例如夜市擺過午夜 12 點），帳目會被切成兩天嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不會。擺攤速以單次「擺攤場次」為單位結算，即使收攤時間超過午夜，整場營收依然歸納在同一天的完整帳目中。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  /* ==== Design tokens = app light theme (src/core/theme.ts LIGHT_COLORS) ==== */
+  :root {
+    --primary: #10B981;
+    --primary-dark: #047857;
+    --primary-light: #ECFDF5;
+    --primary-border: #A7F3D0;
+    --warning: #F59E0B;
+    --warning-light: #FFFBEB;
+    --warning-dark: #B45309;
+    --danger: #EF4444;
+    --bg: #F8FAFC;
+    --surface: #FFFFFF;
+    --surface-sub: #F1F5F9;
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --border-strong: #CBD5E1;
+    --radius: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 20px; }
+
+  /* ==== Header ==== */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(248,250,252,.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .brand { font-weight: 800; font-size: 18px; color: var(--text-main); text-decoration: none; letter-spacing: .5px; }
+  .brand em { font-style: normal; color: var(--primary-dark); }
+  .nav-cta {
+    background: var(--primary); color: #fff; text-decoration: none;
+    font-size: 14px; font-weight: 700; padding: 8px 16px; border-radius: 999px;
+  }
+
+  /* ==== Hero ==== */
+  .hero { padding: 56px 0 40px; text-align: center; }
+  .hero .badge {
+    display: inline-block; background: var(--primary-light); color: var(--primary-dark);
+    border: 1px solid var(--primary-border); border-radius: 999px;
+    font-size: 13px; font-weight: 700; padding: 5px 14px; margin-bottom: 18px;
+  }
+  .hero h1 { font-size: clamp(28px, 7vw, 40px); line-height: 1.3; font-weight: 900; letter-spacing: 1px; }
+  .hero h1 .hl { color: var(--primary-dark); }
+  .hero p.sub { margin-top: 16px; font-size: 16px; color: var(--text-muted); }
+  .hero-cta { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; max-width: 340px; text-decoration: none; text-align: center;
+    border-radius: 14px; font-size: 17px; font-weight: 800; padding: 16px 20px;
+    margin-left: auto; margin-right: auto;
+    transition: transform .15s ease;
+  }
+  .btn:active { transform: scale(.97); }
+  .btn-primary {
+    background: var(--primary); color: #fff;
+    box-shadow: 0 8px 20px -6px rgba(16,185,129,.5);
+  }
+  .btn-secondary {
+    background: var(--surface); color: var(--primary-dark);
+    border: 2px solid var(--primary-border);
+  }
+  .btn + .btn-hint { margin-top: -4px; }
+  .btn-hint { font-size: 12.5px; color: var(--text-muted); }
+  .hidden { display: none !important; }
+
+  /* ==== Phone mock ==== */
+  .mock { margin: 36px auto 0; width: 280px; }
+  .phone {
+    background: var(--surface); border: 2px solid var(--border-strong); border-radius: 32px;
+    padding: 14px 12px 16px; box-shadow: 0 24px 48px -20px rgba(15,23,42,.25);
+  }
+  .phone-top {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--primary-light); border: 1px solid var(--primary-border);
+    border-radius: 10px; padding: 7px 10px; font-size: 12px; font-weight: 700; color: var(--primary-dark);
+  }
+  .phone-kpi { margin: 10px 2px 8px; display: flex; justify-content: space-between; align-items: baseline; }
+  .kpi-label { font-size: 11px; color: var(--text-muted); display: block; }
+  .kpi-num { font-size: 24px; font-weight: 900; font-variant-numeric: tabular-nums; }
+  .chip {
+    display: inline-block; background: var(--warning-light); color: var(--warning-dark);
+    font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px;
+  }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
+  .tile {
+    background: var(--surface-sub); border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 8px; font-size: 12px; font-weight: 700;
+  }
+  .tile span { display: block; font-size: 11px; color: var(--text-muted); font-weight: 400; font-variant-numeric: tabular-nums; }
+  .phone-total {
+    margin-top: 10px; background: var(--text-main); color: #fff; border-radius: 10px;
+    padding: 9px 12px; font-size: 13px; font-weight: 800; display: flex; justify-content: space-between;
+    font-variant-numeric: tabular-nums;
+  }
+  .phone-cta {
+    margin-top: 8px; background: var(--primary); color: #fff; border-radius: 10px;
+    text-align: center; padding: 10px; font-size: 14px; font-weight: 800;
+  }
+
+  /* ==== Sections ==== */
+  section { padding: 52px 0 8px; }
+  .sec-tag { color: var(--primary-dark); font-size: 13px; font-weight: 800; letter-spacing: 2px; }
+  h2 { font-size: clamp(22px, 5.5vw, 28px); font-weight: 900; margin: 8px 0 8px; }
+  .sec-desc { color: var(--text-muted); font-size: 15px; }
+
+  /* Replace cards */
+  .cards { display: grid; gap: 14px; margin-top: 24px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px;
+  }
+  .card .emoji { font-size: 26px; }
+  .card h3 { font-size: 17px; margin: 8px 0 6px; }
+  .card .pain { color: var(--text-muted); font-size: 14px; }
+  .card .gain { margin-top: 10px; background: var(--primary-light); border-left: 3px solid var(--primary); padding: 8px 12px; border-radius: 0 8px 8px 0; font-size: 14px; font-weight: 600; color: var(--primary-dark); }
+
+  /* Feature list */
+  .feat { display: grid; gap: 12px; margin-top: 24px; }
+  .feat-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px;
+  }
+  .feat-icon {
+    flex: 0 0 44px; height: 44px; border-radius: 12px; background: var(--primary-light);
+    display: flex; align-items: center; justify-content: center; font-size: 22px;
+  }
+  .feat-item h3 { font-size: 16px; margin-bottom: 3px; }
+  .feat-item p { font-size: 14px; color: var(--text-muted); }
+
+  /* Principles */
+  .principle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+  .principle {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 18px 16px; text-align: center;
+  }
+  .principle .emoji { font-size: 30px; }
+  .principle h3 { font-size: 15px; margin: 8px 0 4px; }
+  .principle p { font-size: 12.5px; color: var(--text-muted); line-height: 1.55; }
+
+  /* Pricing */
+  .price-hero {
+    margin-top: 24px; background: linear-gradient(135deg, var(--primary-light), #fff);
+    border: 2px solid var(--primary-border); border-radius: 20px; padding: 26px 22px; text-align: center;
+  }
+  .price-hero .tag { font-weight: 800; font-size: 20px; color: var(--primary-dark); }
+  .price-hero ul { list-style: none; margin-top: 14px; text-align: left; }
+  .price-hero li { font-size: 14.5px; padding: 5px 0; }
+  .price-hero li::before { content: "✓ "; color: var(--primary-dark); font-weight: 800; }
+  .price-note { margin-top: 16px; font-size: 13px; color: var(--text-muted); }
+
+  /* Comparison Table */
+  .table-wrap { overflow-x: auto; margin-top: 20px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); box-shadow: 0 4px 12px -2px rgba(15,23,42,.05); }
+  table.compare-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; }
+  table.compare-table th, table.compare-table td { padding: 13px 14px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  table.compare-table th { background: var(--surface-sub); font-weight: 800; color: var(--text-main); }
+  table.compare-table th.col-hl, table.compare-table td.col-hl { background: var(--primary-light); color: var(--primary-dark); font-weight: 800; }
+  table.compare-table tr:last-child td { border-bottom: none; }
+
+  /* FAQ */
+  .faq-list { display: grid; gap: 12px; margin-top: 20px; }
+  .faq-item {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px;
+  }
+  .faq-item h3 { font-size: 15.5px; font-weight: 800; color: var(--text-main); margin-bottom: 8px; display: flex; align-items: baseline; gap: 6px; }
+  .faq-item h3::before { content: "Q."; color: var(--primary); font-weight: 900; font-size: 16px; }
+  .faq-item p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0; }
+
+  /* Survey band */
+  .survey {
+    margin: 56px 0 0; padding: 44px 0 48px;
+    background: var(--text-main); color: #fff;
+  }
+  .survey h2 { color: #fff; }
+  .survey p { color: #94A3B8; font-size: 14.5px; margin-top: 8px; }
+  .survey .btn-primary { margin: 22px auto 0; }
+
+  footer { background: var(--text-main); color: #64748B; font-size: 12.5px; padding: 22px 0 34px; border-top: 1px solid #1E293B; text-align: center; }
+  footer a { color: #94A3B8; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">⚡ 擺攤速 <em>POStand</em></a>
+    <a class="nav-cta" href="https://forms.gle/gsZ1opirxMMz4WYP7" target="_blank" rel="noopener">免費搶先用</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <!-- HERO -->
+    <div class="hero">
+      <span class="badge">沒網路也能用・不用註冊・沒有廣告</span>
+      <h1>客人排隊時，<br><span class="hl">點一下就收好錢</span>。</h1>
+      <p class="sub">文創市集、夜市、同人展、餐車都適用。<br>點商品自動算總價、找零幫你算、收攤帳目一秒對好。</p>
+      <div class="hero-cta">
+        <!-- Store badges — 上架後移除 hidden class 並填入連結 -->
+        <div class="store-row hidden" id="storeRow">
+          <a class="btn btn-primary hidden" id="btnIos" href="#" rel="noopener"></a>
+          <a class="btn btn-primary hidden" id="btnAndroid" href="#" rel="noopener"></a>
+        </div>
+        <a class="btn btn-primary" href="https://forms.gle/gsZ1opirxMMz4WYP7" target="_blank" rel="noopener">📝 免費搶先試用</a>
+        <p class="btn-hint">填一份 3 分鐘的擺攤小問卷，就能比別人早拿到 App。</p>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="phone">
+          <div class="phone-top"><span>🎪 市集擺攤</span><span>🛡️ 暫離</span></div>
+          <div class="phone-kpi">
+            <div><span class="kpi-label">今日營業額</span><span class="kpi-num">$1,200</span></div>
+            <span class="chip">🔥 差 $300 打平攤租！</span>
+          </div>
+          <div class="grid2">
+            <div class="tile">皮蛋瘦肉粥<span>$80</span></div>
+            <div class="tile">海鮮粥<span>$140</span></div>
+          </div>
+          <div class="phone-total"><span>應收總計</span><span>$340</span></div>
+          <div class="phone-cta">⚡ 開始販賣／開台</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAIN → GAIN -->
+    <section id="why">
+      <span class="sec-tag">你是不是也這樣？</span>
+      <h2>客人一多，就手忙腳亂</h2>
+      <p class="sec-desc">計算機、紙筆、記帳 App……擺攤時最常遇到的麻煩，擺攤速都幫你處理好。</p>
+      <div class="cards">
+        <div class="card">
+          <span class="emoji">🔢</span>
+          <h3>「這個多少？那個多少？」</h3>
+          <p class="pain">客人一次買好幾樣，你一邊想單價一邊按計算機，按完還得心算找零，客人殺價又得從頭按。</p>
+          <p class="gain">👉 點商品就自動加總，收多少錢、該找多少，畫面直接告訴你。</p>
+        </div>
+        <div class="card">
+          <span class="emoji">✍️</span>
+          <h3>「剛剛那筆到底記了沒？」</h3>
+          <p class="pain">一手拿錢一手裝袋，根本騰不出手寫帳；尖峰一過就忘了記，收攤數「正」字還對不起來。</p>
+          <p class="gain">👉 點一下就記好一筆，賣了幾個、哪樣最好賣，收攤自動幫你統計。</p>
+        </div>
+        <div class="card">
+          <span class="emoji">🌙</span>
+          <h3>「今天到底有沒有賺？」</h3>
+          <p class="pain">攤位費、零用金、現金、轉帳混在一起，算到半夜也搞不清楚今天是賺是賠。</p>
+          <p class="gain">👉 隨時看到「還差多少打平攤租」，夜市擺過午夜也算同一天的帳。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROMISES -->
+    <section id="principles">
+      <span class="sec-tag">擺攤現場的狀況，都想好了</span>
+      <h2>你可以放心的四件事</h2>
+      <div class="principle-grid">
+        <div class="principle"><span class="emoji">📴</span><h3>沒訊號也照收</h3><p>地下室展場、山上草地市集、夜市人擠網路卡，照樣順順收錢。</p></div>
+        <div class="principle"><span class="emoji">🔐</span><h3>營業額只有你知道</h3><p>帳目只存在你自己的手機裡，不上傳、不外流。</p></div>
+        <div class="principle"><span class="emoji">🧘</span><h3>打開就能開賣</h3><p>不用註冊、沒有廣告，結帳時也不會跳出推銷。</p></div>
+        <div class="principle"><span class="emoji">🚻</span><h3>離開一下也安心</h3><p>託隔壁攤幫忙顧，一鍵藏起今天的營業額。</p></div>
+      </div>
+    </section>
+
+    <!-- A DAY WITH POSTAND -->
+    <section id="features">
+      <span class="sec-tag">你的一天會變成這樣</span>
+      <h2>從開攤到收攤，都輕鬆</h2>
+      <div class="feat">
+        <div class="feat-item"><div class="feat-icon">🧺</div><div><h3>出門前：3 分鐘建好商品</h3><p>輸入商品名稱和價格就好，下次擺攤直接沿用，不用每次重來。</p></div></div>
+        <div class="feat-item"><div class="feat-icon">⚡</div><div><h3>客人來了：點一下就算好</h3><p>大大的商品按鈕，單手拇指就能點；零頭想抹掉、臨時算個價也一下搞定。</p></div></div>
+        <div class="feat-item"><div class="feat-icon">💵</div><div><h3>收錢時：找零不用心算</h3><p>客人拿 500 還是 1000，按一下就知道找多少。要轉帳？收款碼直接秀給客人掃，順便讓他追蹤你的 IG。</p></div></div>
+        <div class="feat-item"><div class="feat-icon">🎉</div><div><h3>擺攤中：看到攤租回本</h3><p>今天賣到哪、還差多少才把攤位費賺回來，一眼就清楚，打平那一刻還會幫你放煙火。</p></div></div>
+        <div class="feat-item"><div class="feat-icon">🛡️</div><div><h3>想去廁所：託人顧也不怕</h3><p>一鍵切換暫離，幫忙的人照樣能收錢，但看不到你今天賺了多少。</p></div></div>
+        <div class="feat-item"><div class="feat-icon">🧮</div><div><h3>收攤後：帳一秒對好</h3><p>現金該有多少、實際點到多少，差多少馬上知道；今天的總結一鍵傳 LINE 給合夥人或家人。</p></div></div>
+        <div class="feat-item"><div class="feat-icon">📲</div><div><h3>換手機：帳本跟著走</h3><p>一鍵備份成加密檔，換新手機也能把所有紀錄完整搬過去。</p></div></div>
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section id="compare">
+      <span class="sec-tag">選對收銀工具，省時省力</span>
+      <h2>擺攤工具大比拼</h2>
+      <p class="sec-desc">市集現場分秒必爭，看看擺攤速與傳統工具的不同：</p>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>需求情境</th>
+              <th class="col-hl">⚡ 擺攤速 POStand</th>
+              <th>計算機 ＋ 紙筆</th>
+              <th>一般雲端 POS</th>
+              <th>一般個人記帳軟體</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>無網路 / 弱訊號可用</strong></td>
+              <td class="col-hl">⭕ 100% 離線秒開</td>
+              <td>⭕ 可，但費時</td>
+              <td>❌ 常卡頓或無法結帳</td>
+              <td>⭕ 可</td>
+            </tr>
+            <tr>
+              <td><strong>點商品自動加總與找零</strong></td>
+              <td class="col-hl">⭕ 點一下自動算</td>
+              <td>❌ 需人工反覆計算</td>
+              <td>⭕ 可</td>
+              <td>❌ 需每筆手動打字</td>
+            </tr>
+            <tr>
+              <td><strong>攤位費損益打平提示</strong></td>
+              <td class="col-hl">⭕ 現場即時看回本</td>
+              <td>❌ 需收攤另外算</td>
+              <td>❌ 無此設計</td>
+              <td>❌ 無此設計</td>
+            </tr>
+            <tr>
+              <td><strong>託隔壁顧攤營業額保密</strong></td>
+              <td class="col-hl">⭕ 一鍵暫離遮蔽營收</td>
+              <td>❌ 容易被翻看記帳紙</td>
+              <td>❌ 需登出或切換帳號</td>
+              <td>❌ 容易被看到隱私</td>
+            </tr>
+            <tr>
+              <td><strong>收費模式</strong></td>
+              <td class="col-hl">⭕ 收銀對帳永久免費</td>
+              <td>免費但易漏單</td>
+              <td>❌ 高額月租 ＋ 硬體成本</td>
+              <td>免費但常跳廣告</td>
+            </tr>
+            <tr>
+              <td><strong>帳目資料隱私</strong></td>
+              <td class="col-hl">⭕ 僅存手機本機，不外流</td>
+              <td>紙本容易遺失</td>
+              <td>儲存於第三方雲端</td>
+              <td>儲存於廠商伺服器</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <span class="sec-tag">要錢嗎？</span>
+      <h2>收錢記帳，永遠免費</h2>
+      <div class="price-hero">
+        <div class="tag">擺攤會用到的，全部免費</div>
+        <ul>
+          <li>收銀、找零、訂單紀錄、收攤對帳、攤租回本——不限次數、不限商品數</li>
+          <li>不用註冊、沒有廣告、帳目只在你手機裡</li>
+          <li>生意做大、需要更多幫手時（例如工讀生收銀模式、多款式庫存、出單機），再依需要一次買斷，不用月月繳</li>
+        </ul>
+        <p class="price-note">想先試試看？完全不用花錢就能開賣。</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <span class="sec-tag">常見問題</span>
+      <h2>攤主常問的問題</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>沒有網路或訊號不好的市集也能用嗎？</h3>
+          <p>可以。擺攤速採用 100% 離線優先架構設計，所有商品計算、找零與紀錄皆在手機本機即時完成，地下室展場、山區市集或人潮擁擠的夜市都能順暢收錢。</p>
+        </div>
+        <div class="faq-item">
+          <h3>需要註冊帳號或每個月繳月租費嗎？</h3>
+          <p>不需要。打開 App 即可直接開賣，不需填寫個資或註冊帳號，基本收銀、算找零、收攤對帳功能永久免費且沒有廣告干擾。</p>
+        </div>
+        <div class="faq-item">
+          <h3>每日擺攤營業額與商品帳目會被上傳到雲端嗎？</h3>
+          <p>不會。所有商品資料與每日銷售紀錄僅儲存在您自己的手機加密資料庫中，不上傳至外部伺服器，確保營業隱私安全。</p>
+        </div>
+        <div class="faq-item">
+          <h3>擺攤中途想離開洗手間或託人顧攤，會被看到今天賺多少錢嗎？</h3>
+          <p>不會。擺攤速內建一鍵「暫離模式」，幫忙顧攤的人依然可以正常點單收銀，但今天的所有營業額與統計數字會立即隱藏保密。</p>
+        </div>
+        <div class="faq-item">
+          <h3>夜市擺攤跨過午夜 12 點，帳目會被切成兩天嗎？</h3>
+          <p>不會。擺攤速以單次「擺攤場次」為單位結算，即使收攤時間超過午夜，整場營收依然歸納在同一天的完整帳目中，對帳一目了然。</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- SURVEY CTA -->
+  <div class="survey">
+    <div class="wrap" style="text-align:center">
+      <h2>下次擺攤，讓收錢變簡單</h2>
+      <p>填一份 3 分鐘的擺攤小問卷，<br>就能比別人早一步免費用到擺攤速。</p>
+      <a class="btn btn-primary" href="https://forms.gle/gsZ1opirxMMz4WYP7" target="_blank" rel="noopener">📝 免費搶先試用</a>
+      <p class="price-note" style="margin-top:14px">Android 版優先開放，iPhone 版即將推出。</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <p>擺攤速 POStand・市集攤主的收銀小幫手</p>
+      <p>有任何問題或想法，歡迎透過<a href="https://forms.gle/gsZ1opirxMMz4WYP7" target="_blank" rel="noopener">調查表</a>告訴我們。・<a href="/postand/privacy">隱私權政策 (Privacy Policy)</a></p>
+    </div>
+  </footer>
+</main>
+
+<script>
+  // ==== Store launch: fill links, remove hidden, run this in console or edit here ====
+  // Set RELEASE_READY = true (or flip the hidden classes in HTML) when stores go live.
+  var RELEASE_READY = false;
+  var STORE = {
+    ios: 'https://apps.apple.com/app/id0000000000',        // TODO fill at launch
+    android: 'https://play.google.com/store/apps/details?id=tw.bobee.postand' // TODO fill at launch
+  };
+  if (RELEASE_READY) {
+    document.getElementById('storeRow').classList.remove('hidden');
+    var ios = document.getElementById('btnIos'), an = document.getElementById('btnAndroid');
+    ios.classList.remove('hidden'); an.classList.remove('hidden');
+    ios.href = STORE.ios; an.href = STORE.android;
+    ios.textContent = '  App Store 下載';
+    an.textContent = '▶︎ Google Play 下載';
+  }
+</script>
+</body>
+</html>
